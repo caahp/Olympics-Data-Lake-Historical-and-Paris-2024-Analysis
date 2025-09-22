@@ -46,5 +46,5 @@ The goal is to process, integrate, and analyze Olympic Games data, producing des
 - Python 3.10+
 - Pandas
 - PyArrow
-- Jupyter Notebook
+- Jupyter Notebook: https://colab.research.google.com/drive/1N6dXO8bYUfSlNKfouFoikP1XnR42xyK_?usp=sharing
 - KaggleHub (for downloading Paris 2024 dataset)
