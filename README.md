@@ -1,50 +1,100 @@
-# Olympics Data Lake: Historical and Paris 2024 Analysis
+Of course. Here is the complete `README.md` file in English, formatted as a code block for easy copying.
 
-This project builds a local **Data Lake** to integrate and analyze data from two main sources:
+```markdown
+# 🏅 Exploratory Data Analysis of the Olympic Games (1896-2024)
 
-1. **Historical Olympics data (1896–2022)** – provided by [Base dos Dados](https://basedosdados.org/dataset/62f8cb83-ac37-48be-874b-b94dd92d3e2b).
-2. **Paris 2024 Summer Olympics data** – provided by [Kaggle](https://www.kaggle.com/datasets/piterfm/paris-2024-olympic-summer-games).
+## 📖 Project Description
 
-The goal is to process, integrate, and analyze Olympic Games data, producing descriptive statistics and visualizations to answer key analytical questions.
+This project conducts a comprehensive exploratory data analysis (EDA) of the Olympic Games, utilizing two primary datasets: a historical collection covering the period from 1896 to 2016, and a specific dataset for the Paris 2024 games.
 
-## ⚙️ ETL Process
+The main goal is to extract insights into the evolution of medal standings, the growth of different sports, and gender participation. The project also features in-depth analyses of sports powerhouses, with a special focus on Brazil's performance. The entire workflow is organized following a Data Lake architecture (Raw, Bronze, Gold) for clear data processing and presentation.
 
-1. **Raw Layer (`raw/`)**
-   - Store original files as downloaded.
-   - Generate metadata (`metadata.json`) with dataset description, source, and collection date.
+## 📊 Analyses Included
 
-2. **Bronze Layer (`bronze/`)**
-   - Convert CSV/CSV.GZ files to **Parquet**.
-   - Keep metadata aligned with processed files.
-   - Integrate historical and Paris 2024 data into a unified dataset.
+The main notebook (`.ipynb`) performs the following analyses:
 
-3. **Gold Layer (`gold/`)**
-   - Generate summary tables, descriptive statistics, and visualizations.
-   - Store Jupyter notebooks, charts, and reports.
+* **Medal Standings Evolution:** Tracks the medal distribution by country since 1988, highlighting dominant nations.
+* **Growth of Sports:** Identifies the sports that have grown the most in terms of athlete participation and visualizes the evolution of the most popular sports.
+* **Gender Evolution:** Analyzes the proportion of athletes by gender in major sports over time (based on historical data).
+* **In-depth Analysis of Brazil's Performance:**
+    * Brazil's medal count evolution by edition, with a spotlight on Rio 2016.
+    * A ranking of the most successful sports for the country.
+    * A comparison of performance in team vs. individual sports.
+* **Clash of Titans:** A comparative analysis of the historical performance between Brazil and Cuba.
+* **The Age of Champions:** A study on the evolution of the average age of Olympic medalists across the decades.
 
----
+## 🛠️ Technologies Used
 
-## 📊 Analytical Questions Answered
+* **Language:** Python 3
+* **Key Libraries:**
+    * Pandas (Data manipulation and analysis)
+    * Matplotlib & Seaborn (Data visualization)
+    * Kaggle API & KaggleHub (Data ingestion)
+    * PyArrow (Reading and writing Parquet files)
+* **Environment:** Google Colab (Jupyter Notebook)
 
-1. **How has the distribution of medals by country evolved from 1986 to Paris 2024?**  
-   - Statistics: total medals per country, average per edition.  
-   - Visualizations: line charts, bar plots.  
+## 🗂️ Project Structure (Data Lake)
 
-2. **Which sports grew the most in terms of participants between 1986 and 2024?**  
-   - Statistics: participants per sport, historical average vs. Paris 2024, median/mode analysis.  
-   - Visualizations: growth plots per sport.  
+The project is organized following a Data Lake architecture with three primary layers to ensure data quality and traceability:
 
-3. **How has the proportion of male vs. female athletes evolved in main sports up to Paris 2024?**  
-   - Statistics: gender proportion by edition and sport.  
-   - Visualizations: boxplots, stacked bar charts.  
+```
 
----
+olympics-datalake/
+│
+├── raw/
+│   \# Raw data, exactly as downloaded from the sources (CSVs, etc.)
+│   ├── olympics\_historico\_results.csv
+│   ├── olympics\_historico\_bio.csv
+│   ├── paris2024\_\*.csv
+│   └── \*.json (Metadata describing each data source)
+│
+├── bronze/
+│   \# Cleaned, standardized, and integrated data, ready for analysis (Parquet format)
+│   ├── medalhas\_1986\_2024.parquet
+│   ├── participantes\_1986\_2024.parquet
+│   ├── genero\_historico.parquet
+│   └── \*.json (Metadata describing each processed table)
+│
+└── gold/
+\# Final layer with the results of the analyses
+├── analise\_medalhas/
+│   ├── medalhas\_summary.csv (Summary table)
+│   └── medalhas\_plot.png (Generated chart)
+│   └── metadata.json
+├── ... (other analysis folders)
 
-## 🚀 Getting Started
+```
 
-### Requirements
-- Python 3.10+
-- Pandas
-- PyArrow
-- Jupyter Notebook: https://colab.research.google.com/drive/1N6dXO8bYUfSlNKfouFoikP1XnR42xyK_?usp=sharing
-- KaggleHub (for downloading Paris 2024 dataset)
+## 🚀 How to Run the Project
+
+To replicate this analysis, follow the steps below:
+
+#### 1. Prerequisites
+* A [Kaggle](https://www.kaggle.com/) account.
+* A Google account to use [Google Colab](https://colab.research.google.com/).
+
+#### 2. Get Your Kaggle API Key
+* Log in to your Kaggle account and navigate to your account settings (`https://www.kaggle.com/settings`).
+* In the "API" section, click on **"Create New Token"**.
+* This will download a file named `kaggle.json` to your computer. Keep this file handy.
+
+#### 3. Running the Notebook
+1.  Open the main notebook from this repository in Google Colab.
+2.  Run the initial cells for installation and folder creation.
+3.  When you first run **Cell 3**, it will require your `kaggle.json` file. In the left-hand menu of Colab (folder icon), click "Upload" and select the `kaggle.json` file you downloaded.
+4.  After the upload is complete, Cell 3 and all subsequent cells will execute successfully, downloading the data and performing all the analyses.
+
+## 📈 Results and Findings
+
+The analysis revealed several interesting trends:
+* Brazil's performance shows consistent growth, with a clear peak during the Rio 2016 Olympic Games, suggesting a "home-field advantage."
+* The comparison between Brazil and Cuba illustrates a transition of power in Latin America, with Cuba dominating in the late 20th century and Brazil rising since the 2000s.
+* The average age of medalists has remained relatively stable over time, with notable variations in specific sports like Artistic Gymnastics (younger athletes) and Equestrianism (older athletes).
+
+## ✍️ Author
+
+* **Caroline Souza**
+* **Yara De Oliveira**
+
+
+``
