@@ -1,5 +1,3 @@
-Of course. Here is the complete `README.md` file in English, formatted as a code block for easy copying.
-
 ```markdown
 # 🏅 Exploratory Data Analysis of the Olympic Games (1896-2024)
 
