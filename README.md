@@ -1,4 +1,3 @@
-```markdown
 # 🏅 Exploratory Data Analysis of the Olympic Games (1896-2024)
 
 ## 📖 Project Description
@@ -93,6 +92,3 @@ The analysis revealed several interesting trends:
 
 * **Caroline Souza**
 * **Yara De Oliveira**
-
-
-``
